@@ -1,0 +1,36 @@
+.error-state-card {
+  display: grid;
+  place-items: center;
+  padding: 40px 24px;
+  border: 1px solid rgba(209, 132, 120, 0.4);
+  border-radius: var(--radius);
+  background: rgba(255, 244, 240, 0.96);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.error-state-content {
+  max-width: 500px;
+  display: grid;
+  gap: 16px;
+}
+
+.error-state-eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: #a83d26;
+  font-weight: 700;
+}
+
+.error-state-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.error-state-message {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}

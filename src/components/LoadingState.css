@@ -1,0 +1,31 @@
+.loading-state {
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  padding: 36px 24px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.loading-state__spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 6px solid rgba(122, 16, 24, 0.16);
+  border-top-color: var(--primary);
+  animation: loading-spin 1s linear infinite;
+}
+
+.loading-state__message {
+  margin: 0;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
