@@ -29,7 +29,7 @@ function Drawer({ isOpen, onClose }) {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About WildFinds</Link>
+              <Link to="/about#about">About WildFinds</Link>
             </li>
             <li>
               <Link to="/about#how-it-works">How It Works</Link>

@@ -16,7 +16,7 @@ function About() {
 
   return (
     <main className="page-layout">
-      <section className="about-grid">
+      <section id="about" className="about-grid">
         <article className="info-card">
           <p className="eyebrow">About WildFinds</p>
           <h2>A centralized lost and found web application for CIT-U.</h2>
