@@ -1,4 +1,19 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
 function About() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1)
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }, [location.hash])
+
   return (
     <main className="page-layout">
       <section className="about-grid">

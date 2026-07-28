@@ -32,10 +32,10 @@ function Drawer({ isOpen, onClose }) {
               <Link to="/about">About WildFinds</Link>
             </li>
             <li>
-              <a href="/about#how-it-works">How It Works</a>
+              <Link to="/about#how-it-works">How It Works</Link>
             </li>
             <li>
-              <a href="/about#team">Developers / Team</a>
+              <Link to="/about#team">Developers / Team</Link>
             </li>
           </ul>
         </div>
