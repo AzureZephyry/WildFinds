@@ -840,6 +840,62 @@ body.drawer-open {
 /* prevent horizontal overflow on small devices */
 html, body { overflow-x: hidden; }
 
+/* Header: mobile-specific optimizations to reduce vertical height */
+@media (max-width: 430px) {
+  .site-header__content {
+    padding: 8px 12px;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .site-header__top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    padding: 8px;
+  }
+
+  .menu-toggle span { width: 20px; height: 2px; }
+
+  .site-header__brand {
+    gap: 2px;
+  }
+
+  .site-header__brand .eyebrow {
+    font-size: 0.7rem;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .site-header h1 {
+    margin: 0;
+    font-size: clamp(1rem, 4.2vw, 1.4rem);
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  /* Reduce the prominence of the site-note to save vertical space */
+  .site-note {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    max-height: 2.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Extra-small phones: hide long subtitle to avoid consuming most of viewport */
+@media (max-width: 360px) {
+  .site-header__content { padding: 6px 10px; }
+  .site-header h1 { font-size: clamp(0.95rem, 4.8vw, 1.2rem); }
+  .site-note { display: none; }
+}
+
 .notification-message {
   padding: 16px 20px;
   border-radius: 18px;
