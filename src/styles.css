@@ -878,23 +878,28 @@ html, body { overflow-x: hidden; }
     font-weight: 700;
   }
 
-  /* Reduce the prominence of the site-note to save vertical space */
-  .site-note {
-    margin: 0;
-    font-size: 0.86rem;
-    color: var(--text-secondary);
-    max-height: 2.6em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    /* Subtitle / site-note: improve wrapping, spacing and readability on mobile */
+    .site-note {
+      margin: 4px 0 0;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.35;
+      padding-right: 8px;
+      max-width: 100%;
+      /* allow up to two lines; prevent the header from becoming extremely tall */
+      max-height: calc(1.35em * 2.2);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
 }
 
-/* Extra-small phones: hide long subtitle to avoid consuming most of viewport */
-@media (max-width: 360px) {
-  .site-header__content { padding: 6px 10px; }
-  .site-header h1 { font-size: clamp(0.95rem, 4.8vw, 1.2rem); }
-  .site-note { display: none; }
-}
+  /* Extra-small phones: hide subtitle only on very small screens (<=320px) */
+  @media (max-width: 320px) {
+    .site-header__content { padding: 6px 10px; }
+    .site-header h1 { font-size: clamp(0.95rem, 4.8vw, 1.2rem); }
+    .site-note { display: none; }
+  }
 
 .notification-message {
   padding: 16px 20px;
