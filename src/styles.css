@@ -798,6 +798,48 @@ body.drawer-open {
   }
 }
 
+/* Additional mobile responsive tweaks */
+/* Drawer adjustments */
+.drawer { width: min(90vw, 320px); max-width: 90vw; }
+.drawer-card { padding: 22px 18px; }
+.drawer-list a { min-height: 44px; display: flex; align-items: center; }
+
+/* Layout and header */
+.site-header__content { padding: 16px; }
+.site-header h1 { font-size: clamp(1.2rem, 3.6vw, 1.8rem); }
+.menu-toggle { padding: 10px; }
+
+/* Page padding */
+.page-layout { padding: 12px; }
+
+/* Search and buttons */
+.search-input-group input { padding: 12px 12px; }
+.search-input-group button { padding: 12px 14px; }
+.report-button { padding: 10px 14px; }
+.primary-button { padding: 14px 18px; min-height: 44px; }
+
+/* Item card stacking */
+@media (max-width: 480px) {
+  .item-card { grid-template-columns: 1fr; padding: 16px; align-items: start; }
+  .item-card__media { width: 100%; min-height: 160px; border-radius: 12px; }
+  .item-card__footer { width: 100%; justify-content: space-between; }
+  .tab-content { padding: 0 12px 18px; }
+}
+
+@media (max-width: 430px) {
+  .site-header__content { padding: 12px 10px; gap: 8px; }
+  .tab-button { padding: 10px 12px; font-size: 0.95rem; }
+  .pagination { padding: 0 12px 18px; justify-content: center; }
+}
+
+@media (max-width: 375px) {
+  .image-uploader__placeholder, .image-uploader__preview { height: 140px; }
+  .item-card__media { min-height: 140px; }
+}
+
+/* prevent horizontal overflow on small devices */
+html, body { overflow-x: hidden; }
+
 .notification-message {
   padding: 16px 20px;
   border-radius: 18px;
