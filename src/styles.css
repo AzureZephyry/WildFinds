@@ -846,12 +846,12 @@ html, body { overflow-x: hidden; }
     padding: 8px 12px;
     grid-template-columns: auto 1fr;
     gap: 10px;
-    align-items: center;
+    align-items: start;
   }
 
   .site-header__top {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
   }
 
@@ -877,21 +877,22 @@ html, body { overflow-x: hidden; }
     line-height: 1.15;
     font-weight: 700;
   }
-
-    /* Subtitle / site-note: improve wrapping, spacing and readability on mobile */
-    .site-note {
-      margin: 4px 0 0;
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.35;
-      padding-right: 8px;
-      max-width: 100%;
-      /* allow up to two lines; prevent the header from becoming extremely tall */
-      max-height: calc(1.35em * 2.2);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: block;
-    }
+  /* Place subtitle below the brand/title and allow full-width wrapping */
+  .site-note {
+    margin: 6px 0 0;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+    padding-right: 8px;
+    max-width: 100%;
+    width: 100%;
+    grid-column: 1 / -1;
+    /* allow up to two lines; keep header compact */
+    max-height: calc(1.35em * 2.4);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
 }
 
   /* Extra-small phones: hide subtitle only on very small screens (<=320px) */
