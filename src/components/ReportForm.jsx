@@ -2,6 +2,7 @@ import { useState } from 'react'
 import FormField from './FormField'
 import ImageUploader from './ImageUploader'
 import ValidationMessage from './ValidationMessage'
+import { BUILDING_OPTIONS } from '../data/buildingOptions'
 import { getItemCategories, createReportSubmission } from '../utils/reportUtils'
 import { validateReport } from '../utils/validation'
 
@@ -119,15 +120,19 @@ function ReportForm({ reportType, onSubmit }) {
         </FormField>
 
         <FormField label="Building" htmlFor="building">
-          <input
+          <select
             id="building"
-            type="text"
             value={values.building}
             onChange={e => setField('building', e.target.value)}
-            placeholder="e.g. Science Block"
-            maxLength={80}
             required
-          />
+          >
+            <option value="">Select a building</option>
+            {BUILDING_OPTIONS.map(option => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
           <ValidationMessage message={errors.building} />
         </FormField>
 

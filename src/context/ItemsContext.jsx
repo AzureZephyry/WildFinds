@@ -1,5 +1,6 @@
 import { createContext, useContext, useMemo, useState } from 'react'
 import { items as initialItems } from '../data/items'
+import { BUILDING_OPTIONS } from '../data/buildingOptions'
 
 const ItemsContext = createContext(null)
 
@@ -67,10 +68,10 @@ export function ItemsProvider({ children }) {
     [items]
   )
 
-  const buildings = useMemo(
-    () => Array.from(new Set(items.map(item => item.building).filter(Boolean))).sort(),
-    [items]
-  )
+  const buildings = useMemo(() => {
+    const itemBuildings = Array.from(new Set(items.map(item => item.building).filter(Boolean))).sort()
+    return [...new Set([...BUILDING_OPTIONS, ...itemBuildings])]
+  }, [items])
 
   return (
     <ItemsContext.Provider value={{ items, addItem, categories, statuses, buildings }}>
